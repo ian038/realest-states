@@ -5,7 +5,7 @@ import { MdCancel } from 'react-icons/md';
 import Image from 'next/image';
 
 import { filterData, getFilterValues } from '../utils/filterData';
-import { baseUrl, fetchApi } from '../utils/fetchApi';
+import { BASE_URL, fetchApi } from '../utils/fetchApi';
 import noresult from '../assets/images/noresult.svg';
 
 export default function SearchFilters() {
@@ -35,7 +35,7 @@ export default function SearchFilters() {
     if (searchTerm !== '') {
       const fetchData = async () => {
         setLoading(true);
-        const data = await fetchApi(`${baseUrl}/auto-complete?query=${searchTerm}`);
+        const data = await fetchApi(`${BASE_URL}/auto-complete?query=${searchTerm}`);
         setLoading(false);
         setLocationData(data?.hits);
       };
