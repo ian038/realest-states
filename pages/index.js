@@ -21,7 +21,7 @@ const Banner = ({ purpose, title1, title2, desc1, desc2, linkName, buttonText, i
 
 export default function Home({ propertiesForSale, propertiesForRent }) {
   return (
-    <div>
+    <Box>
       <Banner 
       purpose='RENT A HOME'
       title1='Rental Homes for'
@@ -48,7 +48,7 @@ export default function Home({ propertiesForSale, propertiesForRent }) {
       <Flex flexWrap='wrap'>
         {propertiesForSale.map((property) => <Property property={property} key={property.id} />)}
       </Flex>
-    </div>
+    </Box>
   )
 }
 
